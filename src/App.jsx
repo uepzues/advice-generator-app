@@ -10,6 +10,7 @@ function App() {
 
   const fetchData = () => {
     setIsLoaded(true)
+    setData({})
     setTimeout(() => {
       fetch("https://api.adviceslip.com/advice")
         .then((response) => response.json())
