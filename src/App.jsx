@@ -11,7 +11,7 @@ function App() {
   const fetchData = () => {
     setIsLoaded(true)
     setData({})
-    setTimeout(() => {
+    // setTimeout(() => {
       fetch("https://api.adviceslip.com/advice")
         .then((response) => response.json())
         .then((data) => {
@@ -21,7 +21,7 @@ function App() {
         .catch((error) => {
           console.error("error:", error);
         });
-    }, 2000);
+    // }, 2000);
   };
 
   useEffect(() => {
@@ -33,9 +33,9 @@ function App() {
       <main>
         {isLoaded ? <div className="custom-loader"></div> : false}
 
-        {!isLoaded ? <h2>Advice # {data.slip?.id}</h2> : true}
+        {!isLoaded ? <h2>Advice # {data.slip.id}</h2> : true}
 
-        {!isLoaded ? <h1>"{data.slip?.advice}"</h1> : true}
+        {!isLoaded ? <h1>"{data.slip.advice}"</h1> : true}
 
         <div className="line">
           <picture>
